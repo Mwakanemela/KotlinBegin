@@ -29,6 +29,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        //implicit intent
         btnShareToOtherApps.setOnClickListener {
             val message: String = etUserMessage.text.toString()
 
@@ -38,6 +39,12 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra(Intent.EXTRA_TEXT, message)
             intent.type = "text/plain"
             startActivity(Intent.createChooser(intent, "(Mwaka app says) -> Share to : "))
+        }
+
+        //recycler view
+        buttonRecyclerViewDemo.setOnClickListener {
+            val intent  = Intent(this, HobbiesActivity::class.java)
+            startActivity(intent)
         }
 
     }
