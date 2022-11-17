@@ -21,12 +21,12 @@ class MainActivity : AppCompatActivity() {
 
 
             val message: String = etUserMessage.text.toString()
-            Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
 
+
+            //explicit intent because i know were i want to go
             val intent = Intent(this, SecondActivity::class.java)
+            intent.putExtra("user_message", message)
             startActivity(intent)
-
-
         }
 
     }
